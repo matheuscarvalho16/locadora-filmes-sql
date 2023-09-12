@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 2 - SQL</title>
+    <link rel="stylesheet" href="../css/style_fase1.css">
+    <script src="https://kit.fontawesome.com/d8ed91d4b7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="texto">
+            <img src="../img/homemdeferro.png" alt="homem_de_ferro">
+            <div class="historia">
+                <p>A locadora do Homem de Ferro está crescendo e novos filmes estão chegando. Sua missão é atualizar a estante de filmes para incluir um novo lançamento, Pantera Negra. </p>
+            </div>
+        </div>
+        <div class="jogo"> 
+            <div class="pecas"> 
+                <div class="bloco" id="create" draggable="true" onclick="adici(event)">
+                    INSERT INTO Filmes VALUES ('Pantera Negra');
+                </div>
+                <div class="bloco" id="select" draggable="true" onclick="adici(event)">
+                    INSERT INTO filmes VALUES ('Pantera Negra', 'Acao');
+                </div>
+                <div class="bloco" id="insert" draggable="true" onclick="adici(event)">
+                    INSERT INTO Filmes VALUES ('Pantera Negra', 'Ação');
+                </div>
+            </div>
+            <div class="area">
+                <div class="bloco_area">
+                </div>
+                <button onclick="nivel3()" id="executar" disabled>EXECUTAR</button>
+            </div>
+        </div>
+        <div class="footer">
+            <button onclick="niveis()" class="btn-nivel">NÍVEIS</button>
+        </div>
+    </div>
+
+    <dialog id="dialogSucesso">
+        <div class="headerDia">
+            <h2>Parabéns! Nível concluido</h2>
+            <button id="fecharDialogoSucesso"><i class="fa-solid fa-x"></i></button>
+        </div>
+        <p>Parabéns, herói! Você adicionou com sucesso o filme 'Pantera Negra' à estante, utilizando o comando SQL 'INSERT INTO'. Assim como um verdadeiro super-herói, você está ampliando sua base de dados e enriquecendo a coleção da locadora. Veja o resultado na tabela abaixo:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>titulo</th>
+                    <th>genero</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Pantera Negra</td>
+                    <td>Ação</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="footerDia">
+            <button onclick="niveis()" class="btn-nivel">NÍVEIS</button>
+            <button onclick="proximaF3()" class="btn-nivel">PRÓXIMA FASE</button>
+        </div>
+    </dialog>
+
+    <dialog id="dialogFalha">
+        <div class="headerDia">
+            <h2>Não foi dessa vez!</h2>
+            <button id="fecharDialogoFalha"><i class="fa-solid fa-x"></i></button>
+        </div>
+        <p>Ops, parece que algo não se encaixou perfeitamente. Mas não desista, herói! Tente novamente e lembre-se de utilizar o comando SQL 'INSERT INTO' para adicionar o filme 'Pantera Negra' à estante. Lembre-se, até mesmo o Homem de Ferro enfrentou desafios. Sua próxima tentativa pode ser o ponto de virada para o sucesso!</p>
+        <div class="footerDia">
+            <button onclick="recomecar()" class="btn-nivel">TENTAR NOVAMENTE</button>
+        </div>
+    </dialog>
+
+    <script src="../js/script_fase3.js"></script>
+</body>
+</html>

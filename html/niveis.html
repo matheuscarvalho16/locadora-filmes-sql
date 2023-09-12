@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Níveis SQL</title>
+    <link rel="stylesheet" href="../css/style_niveis.css">
+    <script src="https://kit.fontawesome.com/d8ed91d4b7.js" crossorigin="anonymous"></script>
+    <script>
+        /* ver se o botão está ativado */
+        window.onload = function () {
+        // Obtém o estado do botão "nivel2" do armazenamento local
+            const nivel2Ativo = localStorage.getItem('nivel2Ativo');
+            const nivel3Ativo = localStorage.getItem('nivel3Ativo');
+            const nivel4Ativo = localStorage.getItem('nivel4Ativo');
+
+        // Se o botão "nivel2" estiver ativado, habilita-o
+            if (nivel2Ativo === 'true') {
+                console.log("foi");
+                const btnNivel2 = document.getElementById('nivel2');
+                if (btnNivel2) {
+                    btnNivel2.removeAttribute('disabled');
+                }
+            }
+            if (nivel3Ativo === 'true') {
+                const btnNivel3 = document.getElementById('nivel3');
+                if (btnNivel3) {
+                    btnNivel3.removeAttribute('disabled');
+                }
+            }
+            if (nivel4Ativo === 'true') {
+                const btnNivel4 = document.getElementById('nivel4');
+                if (btnNivel4) {
+                    btnNivel4.removeAttribute('disabled');
+                }
+            }
+    };
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <p>NÍVEL</p>
+        <div class="niveis">
+            <button onclick="nivel1()">1</button>
+            <button id="nivel2" onclick="nivel2()" disabled>2</button>
+            <button id="nivel3" onclick="nivel3()" disabled>3</button>
+            <button id="nivel4" onclick="nivel4()" disabled>4</button>
+        </div>
+        <div class="bnt">
+            <button onclick="reiniciarJogo()">Reiniciar Jogo</button>
+        </div>
+    </div>
+
+    <script src="../js/script_niveis.js"></script>
+</body>
+</html>
